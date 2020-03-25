@@ -1,16 +1,16 @@
 package pojo.food;
 
 public enum FoodCategories {
-    Grill,
-    SeaFood,
-    Lebanese,
-    Sandwiches,
-    Pizza,
-    Oriental,
-    FastFood,
-    Japanese,
-    Chinese,
-    Shawerma,
-    Pasta;
+    GRILL,
+    SEA_FOOD,
+    LEBANESE,
+    SANDWICHES,
+    PIZZA,
+    ORIENTAL,
+    FAST_FOOD,
+    JAPANESE,
+    CHINESE,
+    SHAWERMA,
+    PASTA;
 }
 
