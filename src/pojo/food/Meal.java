@@ -1,16 +1,26 @@
 package pojo.food;
 
 public class Meal {
-    private float price;
-    private int quantity;
-
-    public Meal(float price, int quantity) {
-        setPrice(price);
-        setQuantity(quantity);
+    private enum Segment {
+        MAIN_MEAL,
+        SIDE_PLATES,
+        APPETIZERS,
+        SALADS,
+        DRINKS;
     }
 
-    public Meal(float price) {
-        this(price, 1);
+    private float price;
+    private int quantity;
+    private Segment segment;
+
+    public Meal(float price, Segment segment, int quantity) {
+        setPrice(price);
+        setQuantity(quantity);
+        setSegment(segment);
+    }
+
+    public Meal(float price, Segment segment) {
+        this(price, segment, 1);
     }
 
     public void setPrice(float price) {
@@ -26,19 +36,30 @@ public class Meal {
         if (quantity > 0)
             this.quantity = quantity;
     }
-    public void decreaseBy(int quantity){
-        if(quantity > 0)
-            this.quantity = Math.max(0,this.quantity-quantity);
-    }
-    public void increaseBy(int quantity){
+
+    public void decreaseBy(int quantity) {
         if (quantity > 0)
-            this.quantity+=quantity;
+            this.quantity = Math.max(0, this.quantity - quantity);
     }
+
+    public void increaseBy(int quantity) {
+        if (quantity > 0)
+            this.quantity += quantity;
+    }
+
     public float getTotalPrice() {
         return price * quantity;
     }
 
     public float getPrice() {
         return price;
+    }
+
+    public Segment getSegment() {
+        return segment;
+    }
+
+    public void setSegment(Segment segment) {
+        this.segment = segment;
     }
 }
